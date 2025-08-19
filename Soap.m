@@ -1,11 +1,6 @@
 function soap_bubble_interference()
-    % 创建主窗口
     fig = figure('Name', '肥皂泡干涉模拟', 'Position', [100, 100, 1200, 700]);
-    
-    % 创建参数面板
     panel = uipanel('Parent', fig, 'Title', '参数控制', 'Position', [0.01, 0.01, 0.28, 0.98]);
-    
-    % 创建绘图区域
     ax = axes('Parent', fig, 'Position', [0.33, 0.1, 0.65, 0.8]);
     
     % 创建干涉分辨率显示文本
@@ -163,7 +158,7 @@ function soap_bubble_interference()
         'HorizontalAlignment', 'left', 'FontWeight', 'bold', 'BackgroundColor', [0.9 0.9 0.6]);
     y = y - label_height - gap;
     
-    % 绘制范围控件 - 可以扩展绘制区域至少30倍
+    % 绘制范围控件
     uicontrol('Parent', scroll_panel, 'Style', 'text', 'String', '绘制范围 (倍数):', ...
         'Units', 'normalized', 'Position', [0.05, y, 0.4, control_height], ...
         'HorizontalAlignment', 'left');
@@ -176,7 +171,7 @@ function soap_bubble_interference()
         'Units', 'normalized', 'Position', [0.7, y-control_height, 0.25, control_height]);
     y = y - control_height*2 - gap*3;
     
-    % 计算按钮 - 放在底部，确保不会与其他控件重叠
+    % 计算按钮
     btn_calc = uicontrol('Parent', scroll_panel, 'Style', 'pushbutton', 'String', '计算干涉图', ...
         'Units', 'normalized', 'Position', [0.25, y, 0.5, 0.06], 'FontWeight', 'bold', ...
         'BackgroundColor', [0.8 0.9 0.8], 'FontSize', 10);
@@ -364,3 +359,4 @@ function update_plot(ax, resolution_text, n1, n2, thick_top, thick_bottom, heigh
     % 更新图形
     drawnow;
 end
+
